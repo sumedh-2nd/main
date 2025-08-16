@@ -13,101 +13,141 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-
     body {
-      background: linear-gradient(135deg, #ff5f6d, #ffc371);
       min-height: 100vh;
+      min-width: 100vw;
+      background: radial-gradient(ellipse at right 30%, #ffc371 60%, #ff5f6d 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      overflow-x: hidden;
+      padding: 16px;
     }
-
     .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 600px;
+      background: rgba(30, 30, 30, 0.82);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.26);
+      backdrop-filter: blur(22px);
+      padding: 40px 38px 32px 38px;
+      border-radius: 25px;
+      max-width: 410px;
       width: 100%;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-      animation: fadeIn 1.5s ease;
+      animation: fadeIn 1.4s cubic-bezier(.44,.64,.22,1.04);
+      position: relative;
     }
-
     h1 {
-      font-size: 2.5em;
+      font-size: 2.15em;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      line-height: 1.13;
+      letter-spacing: -1.3px;
     }
-
     h1 span {
-      color: #fff700;
+      color: #ffe95c;
+      text-shadow: 2px 2px 14px #ff5f6dc7;
     }
-
     p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
+      font-size: 1.16em;
+      margin-bottom: 24px;
+      line-height: 1.5;
     }
-
     .example {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 15px;
-      border-radius: 10px;
+      background: linear-gradient(90deg,rgba(255,247,132,0.55),rgba(240,84,140,0.16));
+      color: #333;
+      padding: 14px 12px;
+      border-radius: 12px;
       margin-bottom: 25px;
-      font-size: 0.95em;
+      font-size: 0.99em;
     }
-
     .btn-container {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 13px;
       flex-wrap: wrap;
+      margin: 16px 0 10px 0;
     }
-
     .btn {
-      padding: 12px 20px;
-      border-radius: 12px;
-      background: #fff;
-      color: #333;
-      font-weight: 600;
+      padding: 14px 22px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, #fff700 60%, #ffc371 100%);
+      color: #111;
+      font-weight: 700;
+      font-size: 1em;
       text-decoration: none;
-      transition: 0.3s;
+      outline: none;
+      border: none;
+      box-shadow: 0 3px 22px -5px #ff5f6d30;
+      transition: all 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+      cursor: pointer;
     }
-
     .btn:hover {
-      background: #333;
+      background: linear-gradient(100deg, #ff5f6d 60%, #ffe95c 100%);
       color: #fff;
-      transform: scale(1.05);
+      transform: translateY(-2px) scale(1.04);
     }
-
+    /* Fun Sparkle Animation */
+    .sparkle {
+      position: absolute;
+      top: -18px; left: 14px;
+      font-size: 1.7em;
+      animation: twinkle 1.5s infinite alternate;
+      pointer-events: none;
+      z-index: 9;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.77; transform: rotate(-9deg) scale(1);}
+      100% { opacity: 1; transform: rotate(16deg) scale(1.15);}
+    }
     footer {
-      margin-top: 30px;
-      font-size: 0.85em;
-      opacity: 0.8;
+      margin-top: 32px;
+      font-size: 0.97em;
+      opacity: 0.92;
+      color: #ffe95c;
+      letter-spacing: 0.01em;
     }
-
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    /* Mobile Responsive Styles */
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px 8vw 18px 8vw;
+        max-width: 97vw;
+      }
+      h1{ font-size: 1.25em; }
+      .btn { font-size: 0.99em; padding:11px 11vw; }
+      .example { font-size: 0.92em; }
+      p { font-size: 1em;}
+      footer {font-size:0.93em;}
+      .sparkle { left: 2vw; top: -10px; font-size: 1.18em; }
     }
   </style>
 </head>
 <body>
   <div class="card">
+    <div class="sparkle">✨</div>
     <h1>Welcome to <span>WhyAreYou.gay 🚀</span></h1>
-    <p>Want to prank your friends in a funny way? <br>
-    Get a custom subdomain with their name and a hilarious page for them!</p>
+    <p>
+      Want to prank your friends in a funny way?<br>
+      Get a custom subdomain with their name and a hilarious page—instantly!
+    </p>
 
     <div class="example">
       <strong>Example:</strong><br>
-      👉 rafi.whyareyou.gay<br>
+      👉 <b>rafi.whyareyou.gay</b><br>
       (With Rafi's photo + some funny jokes 😂)
     </div>
 
-    <p><strong>How to get one for your friend?</strong><br>
-    Just contact me below:</p>
+    <p>
+      <strong>How to get one for your friend?</strong><br>
+      Just contact me below:
+    </p>
 
     <div class="btn-container">
       <a class="btn" href="mailto:sumedhwature2001@example.com">📧 Email</a>
